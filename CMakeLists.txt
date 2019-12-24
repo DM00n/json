@@ -37,7 +37,7 @@ add_library(lab-01-parser STATIC
 add_executable(tests
         ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         include/nlohmann.hpp)
-add_executable(nomer 3
+add_executable(nomer3
         ${CMAKE_CURRENT_SOURCE_DIR}/source/nomer3.cpp
         include/nlohmann.hpp
         )
