@@ -39,8 +39,7 @@ add_executable(tests
         include/nlohmann.hpp)
 add_executable(nomer3
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/nomer3.cpp
-        include/nlohmann.hpp
-        )
+        include/nlohmann.hpp)
 
 target_include_directories(lab-01-parser
         PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -52,6 +51,7 @@ target_include_directories(tests
         )
 
 target_link_libraries(tests PUBLIC GTest::main nlohmann_json::nlohmann_json lab-01-parser)
+target_link_libraries(nomer3 PUBLIC  nlohmann_json::nlohmann_json lab-01-parser)
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests)
@@ -62,6 +62,7 @@ if(BUILD_COVERAGE)
   find_package(codecov)
   add_coverage(lab-01-parser)
   add_coverage(tests)
+  add_coverage(nomer3)
   list(APPEND LCOV_REMOVE_PATTERNS "'${PROJECT_SOURCE_DIR}/tests/*'")
   coverage_evaluate()
 endif()
