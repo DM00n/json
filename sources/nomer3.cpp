@@ -31,3 +31,6 @@ json changer(json obj) {
     }
     return rez;
 }
+int main(int argc, char **argv){
+    return 0;
+}
